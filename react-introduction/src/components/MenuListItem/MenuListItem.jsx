@@ -13,8 +13,6 @@ export function MenuListItem(props) {
   }
 
   function getBackGroundColor() {
-    console.log("Is Hovered ?", isHovered);
-
     if (isHovered) {
       return "#a5e9ff";
     } else {
@@ -22,8 +20,12 @@ export function MenuListItem(props) {
     }
   }
 
+  const onItemClick = () => {
+    props.onClick(props.difficulty);
+  };
   return (
     <div
+      onClick={onItemClick}
       className={theStyle.container}
       onMouseEnter={activate}
       onMouseLeave={deActivate}
