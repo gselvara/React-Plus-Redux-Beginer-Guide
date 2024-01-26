@@ -11,7 +11,7 @@ export function MenuList(props) {
       />
       <MenuListItem
         onClick={props.onItemClick}
-        isSelected={props.difficulty === "Nedium"}
+        isSelected={props.difficulty === "Medium"}
         difficulty="Nedium"
       />
       <MenuListItem

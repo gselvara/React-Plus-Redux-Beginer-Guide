@@ -12,11 +12,15 @@ export function MenuListItem(props) {
     setIsHovered(false);
   }
 
-  function getBackGroundColor() {
+  function getBackgroundColor() {
     if (isHovered) {
       return "#a5e9ff";
     } else {
-      return "#eff0ef";
+      if (props.isSelected) {
+        return "#26baea";
+      } else {
+        return "#eff0ef";
+      }
     }
   }
 
@@ -29,7 +33,7 @@ export function MenuListItem(props) {
       className={theStyle.container}
       onMouseEnter={activate}
       onMouseLeave={deActivate}
-      style={{ backgroundColor: getBackGroundColor() }}
+      style={{ backgroundColor: getBackgroundColor() }}
     >
       Set to : {props.difficulty}
     </div>
