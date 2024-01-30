@@ -21,3 +21,24 @@
 /react-introduction/npm-debug.log*
 /react-introduction/yarn-debug.log*
 /react-introduction/yarn-error.log*
+
+/react-password-generator/node_modules
+/react-password-generator/.pnp
+/react-password-generator/.pnp.js
+
+# testing
+/react-password-generator/coverage
+
+# production
+/react-password-generator/build
+
+# misc
+/react-password-generator/.DS_Store
+/react-password-generator/.env.local
+/react-password-generator/.env.development.local
+/react-password-generator/.env.test.local
+/react-password-generator/.env.production.local
+
+/react-password-generator/npm-debug.log*
+/react-password-generator/yarn-debug.log*
+/react-password-generator/yarn-error.log*
