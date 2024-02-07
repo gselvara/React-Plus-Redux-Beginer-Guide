@@ -1,12 +1,23 @@
 import theStle from "./style.module.css";
 
-export function PasswordGeneratorBody() {
+export function PasswordGeneratorBody(props) {
+    function submitHandler(theEvevnt) {
+        theEvevnt.preventDefault();
+        //console.log("***", theEvevnt);
+        let myFormData = {};
+        new FormData(theEvevnt.currentTarget).forEach((value, key) => {
+            myFormData[key] = value;
+        });
+        console.log("myFormData", myFormData);
+        let generatedPassword = "Generated Password";
+        props.onSubmit(generatedPassword);
+    }
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className={theStle.grid_container}>
                 <div className={theStle.grid_item}>
                     Size
-                    <select defaultValue={15}>
+                    <select name="size" defaultValue={15}>
                         <option>5</option>
                         <option>10</option>
                         <option>15</option>
@@ -15,19 +26,19 @@ export function PasswordGeneratorBody() {
                 </div>
                 <div className={theStle.grid_item}>
                     Uppercase
-                    <input type="checkbox" defaultChecked/>
+                    <input name="uppercase" type="checkbox" defaultChecked/>
                 </div>
                 <div className={theStle.grid_item}>
                     Numbers
-                    <input type="checkbox" defaultChecked/>
+                    <input name="number" type="checkbox" defaultChecked/>
                 </div>
                 <div className={theStle.grid_item}>
                     Specials
-                    <input type="checkbox" defaultChecked/>
+                    <input name="special" type="checkbox" defaultChecked/>
                 </div>
             </div>
             <div className={theStle.btn_container}>
-                <button className={theStle.btn_generate}>GENERATE</button>
+                <button type="submit" className={theStle.btn_generate}>GENERATE</button>
             </div>
         </form>
     )
