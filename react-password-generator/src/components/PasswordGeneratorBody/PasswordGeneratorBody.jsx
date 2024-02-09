@@ -1,3 +1,4 @@
+import { generatedPassword } from "../../util/passwordUtil";
 import theStle from "./style.module.css";
 
 export function PasswordGeneratorBody(props) {
@@ -8,9 +9,7 @@ export function PasswordGeneratorBody(props) {
         new FormData(theEvevnt.currentTarget).forEach((value, key) => {
             myFormData[key] = value;
         });
-        console.log("myFormData", myFormData);
-        let generatedPassword = "Generated Password";
-        props.onSubmit(generatedPassword);
+        props.onSubmit(generatedPassword(myFormData));
     }
     return (
         <form onSubmit={submitHandler}>
